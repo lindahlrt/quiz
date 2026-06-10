@@ -1,0 +1,71 @@
+// ================================================
+// QUIZ OIGNONS — mixins.scss
+// ================================================
+@use 'variables' as *;
+
+// ── Breakpoints ──────────────────────────────────
+$breakpoints: (
+  'sm': 640px,
+  'md': 900px,
+  'lg': 1200px,
+);
+
+@mixin respond-to($bp) {
+  @media (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+// ── Bouton primaire ──────────────────────────────
+@mixin btn-primary {
+  display: inline-block;
+  background: $red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-family: $font;
+
+  &:hover, &:focus { background: $red-dark; }
+}
+
+// ── Carte ────────────────────────────────────────
+@mixin card {
+  background: $white;
+  border-radius: 12px;
+  border: 1px solid $border;
+  padding: 20px;
+}
+
+// ── Input ────────────────────────────────────────
+@mixin input-field {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+  font-size: 14px;
+  font-family: $font;
+  background: white;
+
+  &:focus {
+    border-color: $red;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($red, 0.08);
+  }
+}
+
+// ── Badge ────────────────────────────────────────
+@mixin badge($bg, $color) {
+  background: $bg;
+  color: $color;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
