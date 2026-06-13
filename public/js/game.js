@@ -34,7 +34,7 @@ function selectAnswer(label, val) {
 
 function showOverlay(icon, msg) {
   const overlay = document.getElementById('joker-overlay');
-  document.getElementById('joker-overlay-icon').textContent = icon;
+  document.getElementById('joker-overlay-icon').innerHTML = icon;
   document.getElementById('joker-overlay-msg').innerHTML    = msg;
   if (overlay) { overlay.style.display = 'flex'; overlay.focus(); }
 }
@@ -77,4 +77,23 @@ function usePigeon() {
   if (btn) { btn.disabled = true; btn.classList.add('btn-joker-used'); }
   showOverlay('🕊️', msg);
   markJokerUsed('pigeon');
+}
+
+// Attacher les événements (script chargé en bas de page, DOM déjà prêt)
+{
+  const btnClose = document.getElementById('btn-close-overlay');
+  if (btnClose) btnClose.addEventListener('click', closeJokerOverlay);
+
+  const btnFouGame = document.getElementById('btn-fou');
+  if (btnFouGame) btnFouGame.addEventListener('click', useFou);
+
+  const btnPigeonGame = document.getElementById('btn-pigeon');
+  if (btnPigeonGame) btnPigeonGame.addEventListener('click', usePigeon);
+
+  [1, 2, 3, 4].forEach(i => {
+    const label = document.getElementById('answer-' + i);
+    if (label) label.addEventListener('click', function () {
+      selectAnswer(this, i);
+    });
+  });
 }

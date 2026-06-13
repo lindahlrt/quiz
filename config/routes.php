@@ -84,6 +84,11 @@ class Route
                 useTrainingJoker();
                 break;
 
+            case 'saveTrainingStat':
+                require_once RACINE . "/app/controllers/trainingController.php";
+                saveTrainingStat();
+                break;
+
             // ── Classement ────────────────────────────────
             case 'ranking':
                 require_once RACINE . "/app/controllers/rankingController.php";

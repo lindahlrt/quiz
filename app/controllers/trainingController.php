@@ -125,3 +125,14 @@ function useTrainingJoker()
     if ($joker === 'pigeon') $_SESSION['training']['joker_pigeon'] = false;
     http_response_code(200); exit();
 }
+
+function saveTrainingStat()
+{
+    if (!isset($_SESSION['training'])) {
+        http_response_code(403); exit();
+    }
+    $correct = (int)($_GET['correct'] ?? 0);
+    $_SESSION['training']['total_done']++;
+    if ($correct) $_SESSION['training']['correct']++;
+    http_response_code(200); exit();
+}

@@ -28,10 +28,10 @@ Un mode **entraînement** illimité est également disponible, alimenté par l'A
 
 | Couche | Technologie |
 |---|---|
-| Back-end | PHP 8+ (architecture MVC maison) |
-| Base de données | MySQL / MariaDB (PDO) |
+| Back-end | PHP 8+ (architecture MVC) |
+| Base de données | MySQL  |
 | Front-end | HTML5 sémantique, CSS3 (Flexbox, Grid), SCSS |
-| JavaScript | Vanilla JS, Fetch API (async/await) |
+| JavaScript | JS, Fetch API (async/await) |
 | API externe | Open Trivia Database (entraînement) |
 
 ---
@@ -72,12 +72,12 @@ Quiz_new/
 
 ### Prérequis
 - PHP 8.0+
-- MySQL / MariaDB
+- MySQL 
 - Serveur Apache (XAMPP, WAMP, ou autre)
 
 ### Étapes
 
-1. **Cloner ou déposer** le projet dans votre dossier web (ex: `htdocs/php/Quiz_new`)
+1. **Cloner ou déposer** le projet dans votre dossier web (ex: `htdocs/php/Quiz_v2`)
 
 2. **Créer la base de données**
 ```sql
@@ -89,23 +89,7 @@ CREATE DATABASE quiz_game CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 mysql -u root -p quiz_game < data/quiz_game.sql
 ```
 
-4. **Configurer les variables d'environnement** dans `.env`
-```ini
-DB_HOST=localhost
-DB_NAME=quiz_game
-DB_USER=root
-DB_PASS=
-```
-
-5. **Accéder au projet** via `http://localhost/php/Quiz_new/`
-
-### Compte administrateur par défaut
-| Champ | Valeur |
-|---|---|
-| Email | admin@quiz-oignons.fr |
-| Mot de passe | Admin1234! |
-
----
+4. **Accéder au projet** via `[https://kercode10.greta-bretagne-sud.org/linda-hillairet/Quiz_v2/index.php?action=default]`
 
 ## 🔐 Sécurité
 

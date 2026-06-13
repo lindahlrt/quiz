@@ -52,7 +52,7 @@
     <div class="joker-overlay-box">
       <div class="joker-overlay-icon" id="joker-overlay-icon" aria-hidden="true"></div>
       <p class="joker-overlay-msg" id="joker-overlay-msg"></p>
-      <button onclick="closeJokerOverlay()" class="btn-primary btn-joker-overlay">Continuer</button>
+      <button class="btn-primary btn-joker-overlay" id="btn-close-overlay">Continuer</button>
     </div>
   </div>
 
@@ -118,7 +118,7 @@
         <input type="hidden" name="question_id" value="<?= $question['id'] ?>">
         <div class="game-answers" role="group" aria-label="Choisissez une réponse">
           <?php foreach ([1,2,3,4] as $i): ?>
-            <label class="answer" id="answer-<?= $i ?>" onclick="selectAnswer(this,<?= $i ?>)">
+            <label class="answer" id="answer-<?= $i ?>">
               <input type="radio" name="answer" value="<?= $i ?>" class="sr-only"
                      aria-label="Réponse <?= chr(64+$i) ?> : <?= htmlspecialchars($question['answer'.$i]) ?>">
               <span class="answer-letter" aria-hidden="true"><?= chr(64+$i) ?></span>
@@ -131,14 +131,14 @@
         <div class="game-action-row">
           <button type="button" id="btn-fou"
                   class="btn-joker-pill <?= $fouUsed ? 'btn-joker-used' : '' ?>"
-                  onclick="useFou()"
+                  id="btn-fou-click"
                   <?= $fouUsed ? 'disabled aria-disabled="true"' : '' ?>
                   aria-label="Joker Fou du roi<?= $fouUsed ? ' (déjà utilisé)' : '' ?>">
             <span aria-hidden="true"><i class="fa-solid fa-chess-knight" aria-hidden="true"></i></span> Fou du roi
           </button>
           <button type="button" id="btn-pigeon"
                   class="btn-joker-pill <?= $pigeonUsed ? 'btn-joker-used' : '' ?>"
-                  onclick="usePigeon()"
+                  id="btn-pigeon-click"
                   <?= $pigeonUsed ? 'disabled aria-disabled="true"' : '' ?>
                   aria-label="Joker Pigeon au fermier<?= $pigeonUsed ? ' (déjà utilisé)' : '' ?>">
             <span aria-hidden="true"><i class="fa-solid fa-dove" aria-hidden="true"></i></span> Pigeon au fermier

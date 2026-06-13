@@ -4,12 +4,8 @@
 </footer>
 
 <script src="<?= BASE_URL ?>/public/js/app.js"></script>
-<?php if (isset($currentAction) && $currentAction === 'game'): ?>
-  <script src="<?= BASE_URL ?>/public/js/game.js"></script>
-<?php endif; ?>
-<?php if (isset($currentAction) && $currentAction === 'training'): ?>
-  <script src="<?= BASE_URL ?>/public/js/training.js"></script>
-<?php endif; ?>
+<script src="<?= BASE_URL ?>/public/js/game.js"></script>
+<script src="<?= BASE_URL ?>/public/js/training.js"></script>
 <?php if (isset($currentAction) && in_array($currentAction, ['editProfile','showProfile'])): ?>
   <script src="<?= BASE_URL ?>/public/js/profile.js"></script>
 <?php endif; ?>
